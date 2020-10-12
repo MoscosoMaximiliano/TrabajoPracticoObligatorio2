@@ -129,42 +129,40 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Sources\IMGS\LOGO.svg" />
-    <Content Include="Sources\IMGS\market\las-vegas-store.jpg" />
-    <Content Include="Sources\IMGS\market\razer-hong-kong.png" />
-    <Content Include="Sources\IMGS\market\razerstore-london.jpg" />
-    <Content Include="Sources\IMGS\market\razerstores-sf.jpg" />
-    <Content Include="Sources\IMGS\market\razerstores-taipei.jpg" />
-    <Content Include="Sources\IMGS\products\BlackWidow-2019-Base.png" />
-    <Content Include="Sources\IMGS\products\BlackWidow-Ultimate-2017-Base.png" />
-    <Content Include="Sources\IMGS\products\Mamba-Elite-Base.png" />
-    <Content Include="Sources\IMGS\products\pc.png" />
-    <Content Include="Sources\IMGS\products\Razer Basilisk Quartz.png" />
-    <Content Include="Sources\IMGS\products\razer-seiren-x.jpg" />
-    <Content Include="Sources\IMGS\products\RazerCoreXChroma.png" />
-    <Content Include="Sources\IMGS\products\RazerGoliathusChromaExtendedGears5.png" />
-    <Content Include="Sources\IMGS\products\RazerGoliathusMedium-OverwatchLucioEdition.png" />
-    <Content Include="Sources\IMGS\products\RazerKrakenKitty-Black.png" />
-    <Content Include="Sources\IMGS\products\RazerNariUltimate-OverwatchLúcioEdition.png" />
-    <Content Include="Sources\IMGS\products\RazerNariUltimate.png" />
-    <Content Include="Sources\IMGS\products\RazerPhone2TemperedGlasssProtectorKit.png" />
-    <Content Include="Sources\IMGS\products\RZ01-02130100-R3U1.png" />
-    <Content Include="Sources\IMGS\slider\image1.png" />
-    <Content Include="Sources\IMGS\slider\image2.png" />
-    <Content Include="Sources\IMGS\slider\image3.png" />
-    <Content Include="Styles\normalize.css" />
-    <Content Include="Styles\style.css" />
+    <Content Include="Images\LOGO.svg" />
+    <Content Include="Images\market\las-vegas-store.jpg" />
+    <Content Include="Images\market\razer-hong-kong.png" />
+    <Content Include="Images\market\razerstore-london.jpg" />
+    <Content Include="Images\market\razerstores-sf.jpg" />
+    <Content Include="Images\market\razerstores-taipei.jpg" />
+    <Content Include="Images\products\BlackWidow-2019-Base.png" />
+    <Content Include="Images\products\BlackWidow-Ultimate-2017-Base.png" />
+    <Content Include="Images\products\Mamba-Elite-Base.png" />
+    <Content Include="Images\products\pc.png" />
+    <Content Include="Images\products\Razer Basilisk Quartz.png" />
+    <Content Include="Images\products\razer-seiren-x.jpg" />
+    <Content Include="Images\products\RazerCoreXChroma.png" />
+    <Content Include="Images\products\RazerGoliathusChromaExtendedGears5.png" />
+    <Content Include="Images\products\RazerGoliathusMedium-OverwatchLucioEdition.png" />
+    <Content Include="Images\products\RazerKrakenKitty-Black.png" />
+    <Content Include="Images\products\RazerNariUltimate-OverwatchLúcioEdition.png" />
+    <Content Include="Images\products\RazerNariUltimate.png" />
+    <Content Include="Images\products\RazerPhone2TemperedGlasssProtectorKit.png" />
+    <Content Include="Images\products\RZ01-02130100-R3U1.png" />
+    <Content Include="Images\slider\image1.png" />
+    <Content Include="Images\slider\image2.png" />
+    <Content Include="Images\slider\image3.png" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\googleMap.js" />
+    <Content Include="Scripts\accordionFunction.js" />
+    <Content Include="Scripts\validationForm.js" />
+    <Content Include="Scripts\sliderFunction.js" />
+    <Content Include="Scripts\popUpInformation.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -186,15 +184,17 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Market.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Partial\HeaderViewPartial.cshtml" />
     <Content Include="Views\Home\Partial\FooterViewPartial.cshtml" />
+    <Content Include="Views\Home\Partial\MenuViewPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Styles\" />
     <Folder Include="Views\Footer\" />
     <Folder Include="Views\Index\" />
   </ItemGroup>
@@ -203,13 +203,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{f5990ca7-0441-4fd5-aa1a-3be6dfc9bb47}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

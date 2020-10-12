@@ -1,17 +1,56 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@Html.Partial("Partial/HeaderViewPartial")
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@Html.Partial("Partial/MenuViewPartial")
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <main>
+        <section>
+            <div id="menu"></div>
+        </section>
+        <section>
+            <div class="contact-container">
+                <div class="form">
+                    <center>
+                        <h1 style="color: #44D62C; font-size: 42px;">RAZER SUPPORT</h1>
+                        <h2>Contact us!</h2>
+                        <div class="errorsBox" id="errorMessages"></div>
+                        <form id="contactForm" action="/" method="GET">
+                            <label for="name">Name*:</label>
+                            <input type="text" name="" id="name" placeholder="Moscoso Maximiliano">
+                            <label for="email">Email*:</label>
+                            <input type="email" name="" id="email" placeholder="name@mail.com">
+                            <label for="phone">Phone*:</label>
+                            <input type="text" name="" id="business" placeholder="123456789">
+                            <label for="message">Message*:</label>
+                            <textarea name="" id="message" cols="30" rows="10" placeholder="Some text"></textarea>
+                            <center><input type="submit" value="Submit"></center>
+                        </form>
+                        <h3>All fields are requiered!</h3>
+                    </center>
+                </div>
+                <div class="map">
+                    <h1>Attention schedule</h1>
+                    <h2>Monday to Saturday: 09:30-20:00</h2>
+                    <h2>Sundays: 09:30-13:30 </h2>
+                    <h1>Mail</h1>
+                    <h2>razer@company.com</h2>
+                    <h1>Direction</h1>
+                    <h2>2035 Corte Del Nogal Ste 101, Carlsbad, CA 92011</h2>
+                    <div class="container-map">
+                        <div id="map" style="width: 100%; height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+@Html.Partial("Partial/FooterViewPartial")
+
+
+<script src="JS/googleMap.js"></script>
+<script src="JS/validationForm.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB5gWj09Kgwjf9Jw1GU0rbeNh8IrkFyhQ&callback=initMap"
+        type="text/javascript"></script>

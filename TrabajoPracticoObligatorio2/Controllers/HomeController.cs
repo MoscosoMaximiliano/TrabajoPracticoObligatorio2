@@ -13,7 +13,7 @@ namespace TrabajoPracticoObligatorio2.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Market()
         {
             ViewBag.Message = "Your application description page.";
 
