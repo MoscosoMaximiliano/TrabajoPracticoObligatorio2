@@ -1,0 +1,11 @@
+﻿
+@foreach (var item in Model)
+{
+    <div class="product">
+        <img src="img/products/BlackWidow-2019-Base.png" alt="">
+        <h1>@item.Name</h1>
+        <h3>@item.Price</h3>
+        <a href="#popup" onclick="ShowInformation('@item.ID')" class="button">See</a>
+        <button class="buy-button">Buy</button>
+    </div>
+}

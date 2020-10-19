@@ -18,6 +18,16 @@ namespace TrabajoPracticoObligatorio2
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "Market",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Market", action = "Market", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Contact",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Contact", action = "Contact", id = UrlParameter.Optional }
+            );
             
         }
     }

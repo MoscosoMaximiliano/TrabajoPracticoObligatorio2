@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CapaNegocio;
+using TrabajoPracticoObligatorio2.Models;
 
 namespace TrabajoPracticoObligatorio2.Controllers
 {
@@ -10,21 +12,17 @@ namespace TrabajoPracticoObligatorio2.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            var resp = CapaNegocio.Products.GetItems();
 
-        public ActionResult Market()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var list_items = resp.Select(x => new Item
+            {
+                ID = x.ID,
+                Description = x.Description,
+                Name = x.Name,
+                Price = x.Price
+            }).ToList();
+            
+            return View(list_items);
         }
     }
 }

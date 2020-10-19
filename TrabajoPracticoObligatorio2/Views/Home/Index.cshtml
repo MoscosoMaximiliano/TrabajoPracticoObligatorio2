@@ -1,4 +1,4 @@
-﻿
+﻿@model List<TrabajoPracticoObligatorio2.Models.Item>
 
 @{
     ViewBag.Title = "Home Page";
@@ -15,9 +15,12 @@
     <section>
         <div class="container">
             <ul id="image-list">
-                <li><img src="img/slider/image1.png" /></li>
-                <li><img src="img/slider/image2.png" /></li>
-                <li><img src="img/slider/image3.png" /></li>
+                <li>
+                    <img src="~/Images/slider/image1.png" alt=""/></li>
+                <li>
+                    <img src="~/Images/slider/image2.png" alt=""/></li>
+                <li>
+                    <img src="~/Images/slider/image3.png" alt=""/></li>
             </ul>
         </div>
     </section>
@@ -66,55 +69,56 @@
             <!-- FEATURED PRODUCTS -->
             <div class="general-title">Featured Products</div>
             <div class="container-block">
-
-                <div class="product">
-                    <img src="img/products/BlackWidow-2019-Base.png" alt="">
-                    <h1>Razer BlackWidow 2019</h1>
-                    <h3>US$169.99</h3>
-                    <a href="#popup" onclick="ShowInformation('RBW2019')" class="button">See</a>
-                    <button class="buy-button">Buy</button>
-                </div>
-
-                <div class="product">
-                    <img src="img/products/BlackWidow-Ultimate-2017-Base.png" alt="">
-                    <h1>BlackWidow Ultimate 2017</h1>
-                    <h3>US$129.99</h3>
-                    <a href="#popup" onclick="ShowInformation('BWU2017')" class="button">See</a>
-                    <button class="buy-button">Buy</button>
-                </div>
-
-                <div class="product">
-                    <img src="img/products/Mamba-Elite-Base.png" alt="">
-                    <h1>Mamba Elite</h1>
-                    <h3>US$69.99</h3>
-                    <a href="#popup" onclick="ShowInformation('ME')" class="button">See</a>
-                    <button class="buy-button">Buy</button>
-                </div>
-
-                <div class="product">
-                    <img src="img/products/RZ01-02130100-R3U1.png" alt="">
-                    <h1>Razer DeathAdder V2</h1>
-                    <h3>US$69.99</h3>
-                    <a href="#popup" onclick="ShowInformation('RDAV2')" class="button">See</a>
-                    <button class="buy-button">Buy</button>
-                </div>
-
-                <div class="product">
-                    <img src="img/products/RazerCoreXChroma.png" alt="">
-                    <h1>Razer Core X Chroma</h1>
-                    <h3>US$399.99</h3>
-                    <a href="#popup" onclick="ShowInformation('RCXC')" class="button">See</a>
-                    <button class="buy-button">Buy</button>
-                </div>
-
-                <div class="product">
-                    <img src="img/products/Razer Basilisk Quartz.png" alt="">
-                    <h1>Razer Basilisk Quartz</h1>
-                    <h3>US$69.99</h3>
-                    <a href="#popup" onclick="ShowInformation('RBQ')" class="button">See</a>
-                    <button class="buy-button">Buy</button>
-                </div>
+                @Html.Partial("Partial/FeaturedProductsViewPartial")
             </div>
+                @*     <div class="product"> *@
+            @*         <img src="img/products/BlackWidow-2019-Base.png" alt=""> *@
+            @*         <h1>Razer BlackWidow 2019</h1> *@
+            @*         <h3>US$169.99</h3> *@
+            @*         <a href="#popup" onclick="ShowInformation('RBW2019')" class="button">See</a> *@
+            @*         <button class="buy-button">Buy</button> *@
+            @*     </div> *@
+            @* *@
+            @*     <div class="product"> *@
+            @*         <img src="img/products/BlackWidow-Ultimate-2017-Base.png" alt=""> *@
+            @*         <h1>BlackWidow Ultimate 2017</h1> *@
+            @*         <h3>US$129.99</h3> *@
+            @*         <a href="#popup" onclick="ShowInformation('BWU2017')" class="button">See</a> *@
+            @*         <button class="buy-button">Buy</button> *@
+            @*     </div> *@
+            @* *@
+            @*     <div class="product"> *@
+            @*         <img src="img/products/Mamba-Elite-Base.png" alt=""> *@
+            @*         <h1>Mamba Elite</h1> *@
+            @*         <h3>US$69.99</h3> *@
+            @*         <a href="#popup" onclick="ShowInformation('ME')" class="button">See</a> *@
+            @*         <button class="buy-button">Buy</button> *@
+            @*     </div> *@
+            @* *@
+            @*     <div class="product"> *@
+            @*         <img src="img/products/RZ01-02130100-R3U1.png" alt=""> *@
+            @*         <h1>Razer DeathAdder V2</h1> *@
+            @*         <h3>US$69.99</h3> *@
+            @*         <a href="#popup" onclick="ShowInformation('RDAV2')" class="button">See</a> *@
+            @*         <button class="buy-button">Buy</button> *@
+            @*     </div> *@
+            @* *@
+            @*     <div class="product"> *@
+            @*         <img src="img/products/RazerCoreXChroma.png" alt=""> *@
+            @*         <h1>Razer Core X Chroma</h1> *@
+            @*         <h3>US$399.99</h3> *@
+            @*         <a href="#popup" onclick="ShowInformation('RCXC')" class="button">See</a> *@
+            @*         <button class="buy-button">Buy</button> *@
+            @*     </div> *@
+            @* *@
+            @*     <div class="product"> *@
+            @*         <img src="img/products/Razer Basilisk Quartz.png" alt=""> *@
+            @*         <h1>Razer Basilisk Quartz</h1> *@
+            @*         <h3>US$69.99</h3> *@
+            @*         <a href="#popup" onclick="ShowInformation('RBQ')" class="button">See</a> *@
+            @*         <button class="buy-button">Buy</button> *@
+            @*     </div> *@
+            @* </div> *@
 
             <!-- OFFERS PRODUCTS -->
             <div class="general-title">Offers</div>
@@ -273,8 +277,10 @@
 
 @Html.Partial("Partial/FooterViewPartial")
 
-<!--<script src="~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.js"></script>
-<script src="PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.min.js"></script>-->
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.js"></script>
+<script src="~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.min.js"></script>
 <script src="~/Scripts/popUpInformation.js"></script>
 <script src="~/Scripts/sliderFunction.js"></script>
 <script src="~/Scripts/accordionFunction.js"></script>
