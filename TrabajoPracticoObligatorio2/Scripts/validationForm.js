@@ -1,6 +1,6 @@
 ﻿const name = document.getElementById('name');
 const email = document.getElementById('email');
-const business = document.getElementById('business');
+const phone = document.getElementById('phone');
 const message = document.getElementById('message');
 
 const form = document.getElementById('contactForm');
@@ -36,10 +36,10 @@ form.addEventListener('submit', (e) => {
         messages.push("Enter a valid mail")
     }
 
-    if (business.value === '' || business.value == null)
+    if (phone.value === '' || phone.value == null)
         messages.push("Business field its empty");
 
-    else if (business.value.length > 20) {
+    else if (phone.value.length > 20) {
         messages.push("Business message cannot be more than 20 characters")
     }
 

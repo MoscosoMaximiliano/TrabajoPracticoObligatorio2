@@ -13,16 +13,28 @@ namespace TrabajoPracticoObligatorio2.Controllers
         public ActionResult Index()
         {
             var resp = CapaNegocio.Products.GetItems();
+            var resp2 = Products.GetCategories();
 
-            var list_items = resp.Select(x => new Item
+            var data = new IndexModelData();
+
+            data.categories = resp2.Select(x => new Categories
+            {
+                ID = x.ID,
+                Category = x.Category,
+                SubCategory = x.SubCategory
+            }).ToList();
+            
+            data.items = resp.Select(x => new Item
             {
                 ID = x.ID,
                 Description = x.Description,
                 Name = x.Name,
-                Price = x.Price
+                Price = x.Price,
+                ImgUrl = x.ImgUrl,
+                IsOffer = x.IsOffer
             }).ToList();
             
-            return View(list_items);
+            return View(data);
         }
     }
 }

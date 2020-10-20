@@ -1,0 +1,44 @@
+﻿<div class="general-title">Featured Products</div>
+<div class="container-block" id="ProductFeatured">
+    @foreach (var item in Model.items)
+    {
+        if (!item.IsOffer)
+        {
+            <div class="product">
+                <article id="@item.ID"
+                         data-img=@Url.Content("~/Content/Images/products/"+@item.ImgUrl)
+                         data-name="@item.Name"
+                         data-price="US$@item.Price"
+                         data-description="@item.Description"></article>
+                <img src="~/Content/Images/products/@item.ImgUrl" alt="">
+                <h1>@item.Name</h1>
+                <h3>@item.Price</h3>
+                <a href="#popup" onclick="ShowInformation('@item.ID')" class="button">See</a>
+                <button class="buy-button">Buy</button>
+            </div>
+        }
+        
+    }
+</div>
+<div class="general-title">Offers</div>
+<div class="container-block" id="ProductOffer">
+    @foreach (var item in Model.items)
+    {
+        if (item.IsOffer)
+        {
+            <div class="product">
+                <article id="@item.ID"
+                         data-img=@Url.Content("~/Content/Images/products/"+@item.ImgUrl)
+                         data-name="@item.Name"
+                         data-price="US$@item.Price"
+                         data-description="@item.Description"></article>
+                <img src="~/Content/Images/products/@item.ImgUrl" alt="">
+                <h1>@item.Name</h1>
+                <h3>@item.Price</h3>
+                <a href="#popup" onclick="ShowInformation('@item.ID')" class="button">See</a>
+                <button class="buy-button">Buy</button>
+            </div>
+        }
+        
+    }
+</div>

@@ -1,0 +1,17 @@
+﻿<div class="categories left">
+    <div class="general-title title-categories">Categories</div>
+    @foreach (var category in Model.categories)
+    {
+        <button class="accordion">@category.Category</button>
+        if (category.SubCategory.Count != 0)
+        {
+            <div class="panel">
+                @foreach (var sub in category.SubCategory)
+                {
+                    <p>@sub</p>
+                }
+            </div>
+        }
+        
+    }
+</div>

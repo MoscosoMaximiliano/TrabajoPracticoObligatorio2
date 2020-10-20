@@ -9,5 +9,15 @@ namespace TrabajoPracticoObligatorio2.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Contact(string name, string username)
+        {
+            var text = "LOGRADO";
+
+            ViewBag.Message = text;
+
+            return View();
+        }
     }
 }

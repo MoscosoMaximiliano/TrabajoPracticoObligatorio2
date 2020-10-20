@@ -1,57 +1,66 @@
-﻿@{
+﻿@using System.Web.UI.WebControls
+@{
     ViewBag.Title = "Contact";
 }
-@Html.Partial("Partial/HeaderViewPartial")
 
-@Html.Partial("Partial/MenuViewPartial")
-
-    <main>
-        <section>
-            <div id="menu"></div>
-        </section>
-        <section>
-            <div class="contact-container">
-                <div class="form">
-                    <center>
-                        <h1 style="color: #44D62C; font-size: 42px;">RAZER SUPPORT</h1>
-                        <h2>Contact us!</h2>
-                        <div class="errorsBox" id="errorMessages"></div>
-                        <form id="contactForm" action="/" method="GET">
-                            <label for="name">Name*:</label>
-                            <input type="text" name="" id="name" placeholder="Moscoso Maximiliano">
-                            <label for="email">Email*:</label>
-                            <input type="email" name="" id="email" placeholder="name@mail.com">
-                            <label for="phone">Phone*:</label>
-                            <input type="text" name="" id="business" placeholder="123456789">
-                            <label for="message">Message*:</label>
-                            <textarea name="" id="message" cols="30" rows="10" placeholder="Some text"></textarea>
-                            <center><input type="submit" value="Submit"></center>
-                        </form>
-                        <h3>All fields are requiered!</h3>
-                    </center>
-                </div>
-                <div class="map">
-                    <h1>Attention schedule</h1>
-                    <h2>Monday to Saturday: 09:30-20:00</h2>
-                    <h2>Sundays: 09:30-13:30 </h2>
-                    <h1>Mail</h1>
-                    <h2>razer@company.com</h2>
-                    <h1>Direction</h1>
-                    <h2>2035 Corte Del Nogal Ste 101, Carlsbad, CA 92011</h2>
-                    <div class="container-map">
-                        <div id="map" style="width: 100%; height: 400px;"></div>
-                    </div>
+<main>
+    <section>
+        <div id="menu"></div>
+    </section>
+    <section>
+        <div class="contact-container">
+            <div class="form">
+                <center>
+                    <h1 style="color: #44D62C; font-size: 42px;">RAZER SUPPORT</h1>
+                    <h2>Contact us!</h2>
+                    <div class="errorsBox" id="errorMessages"></div>
+                    <form id="contactForm" action="/" method="GET">
+                        <label for="name">Name*:</label>
+                        <input type="text" name="" id="name" placeholder="Moscoso Maximiliano">
+                        <label for="email">Email*:</label>
+                        <input type="email" name="" id="email" placeholder="name@mail.com">
+                        <label for="phone">Phone*:</label>
+                        <input type="text" name="" id="phone" onkeypress="return isNumberKey(event)" placeholder="123456789">
+                        <label for="message">Message*:</label>
+                        <textarea name="" id="message" cols="30" rows="10" placeholder="Some text"></textarea>
+                        <center><input type="submit" value="Submit"></center>
+                    </form>
+                    <h3>All fields are requiered!</h3>
+                </center>
+            </div>
+            <div class="map">
+                <h1>Attention schedule</h1>
+                <h2>Monday to Saturday: 09:30-20:00</h2>
+                <h2>Sundays: 09:30-13:30 </h2>
+                <h1>Mail</h1>
+                <h2>razer@company.com</h2>
+                <h1>Direction</h1>
+                <h2>2035 Corte Del Nogal Ste 101, Carlsbad, CA 92011</h2>
+                <div class="container-map">
+                    <div id="map" style="width: 100%; height: 400px;"></div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
-@Html.Partial("Partial/FooterViewPartial")
+<script >
+function isNumberKey(evt){
+    const charCode = (evt.which) ? evt.which : evt.keyCode;
+    return !(charCode > 31 && (charCode < 48 || charCode > 57));
+    
+}
+</script>
 
-
-
-<script src="JS/googleMap.js"></script>
-<script src="JS/validationForm.js"></script>
+<script src="~/Scripts/googleMap.js"></script>
+<script src="~/Scripts/validationForm.js"></script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB5gWj09Kgwjf9Jw1GU0rbeNh8IrkFyhQ&callback=initMap"
         type="text/javascript"></script>
+        
+@if (ViewBag.IsCorret != null && ViewBag.IsCorrect != false)
+{
+    <script>
+    alert("@ViewBag.Message");
+    </script>
+}
