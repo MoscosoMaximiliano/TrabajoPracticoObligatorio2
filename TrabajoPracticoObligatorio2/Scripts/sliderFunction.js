@@ -4,10 +4,7 @@
 });
 
 // not $(document).load() since you need the images to load to know their dimensions
-$(window).load(function () {
+window.onload = function () {
     // 10 is the scrolling speed
-    $("#image-list").scrolloop(10).
-
-        // show image list since we're all set
-        slideDown(500);
-});
+    $("#image-list").scrolloop(10).slideDown(500);
+};
