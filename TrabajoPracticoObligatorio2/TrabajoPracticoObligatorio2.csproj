@@ -142,8 +142,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\LOGO.svg" />
-    <Content Include="Content\Images\market\las-vegas-store.jpg" />
-    <Content Include="Content\Images\market\razer-hong-kong.png" />
+    <Content Include="Content\Images\market\razerstore-las-vegas-store.jpg" />
+    <Content Include="Content\Images\market\razerstore-hong-kong.png" />
     <Content Include="Content\Images\market\razerstore-london.jpg" />
     <Content Include="Content\Images\market\razerstores-sf.jpg" />
     <Content Include="Content\Images\market\razerstores-taipei.jpg" />

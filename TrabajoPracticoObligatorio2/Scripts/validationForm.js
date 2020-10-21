@@ -3,13 +3,13 @@ const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const message = document.getElementById('message');
 
-const form = document.getElementById('contactForm');
+const button = document.getElementById('buttonForm');
 
 const errorMessages = document.getElementById('errorMessages');
 
 const ck_alphanumerics = /^[A-Za-z0-9-]/;
 
-form.addEventListener('submit', (e) => {
+button.addEventListener('submit', (e) => {
     let messages = [];
 
     if (name.value === '' || name.value == null)
@@ -25,10 +25,7 @@ form.addEventListener('submit', (e) => {
         messages.push("The name its too long");
         messages.push("The name can only contain alphanumeric characters");
     }
-
-
-
-
+    
     if (email.value === '' || email.value == null)
         messages.push("Email field its empty");
 
@@ -55,6 +52,7 @@ form.addEventListener('submit', (e) => {
     }
 
     var formatTextError = "<ul>"
+    
     if (messages.length > 0) {
         e.preventDefault();
         for (let index = 0; index < messages.length; index++) {
@@ -63,6 +61,8 @@ form.addEventListener('submit', (e) => {
             formatTextError += "<li>" + element + "</li>";
 
         }
+        
+        formatTextError += "</ul>";
 
         errorMessages.innerHTML = formatTextError;
 
