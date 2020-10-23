@@ -8,6 +8,7 @@ namespace CapaNegocio
         {
             SubCategory = new List<string>();
         }
+        
         public string ID { get; set; }
         public string Category { get; set; }
         

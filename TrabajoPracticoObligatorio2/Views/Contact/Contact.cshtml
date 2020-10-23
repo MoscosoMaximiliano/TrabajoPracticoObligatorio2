@@ -67,8 +67,10 @@
     }
 </script>
 
-<script src="~/Scripts/googleMap.js"></script>
-<script src="~/Scripts/validationForm.js"></script>
+@Scripts.Render("~/Scripts/googleMap.js")
+@Scripts.Render("~/Scripts/validationForm.js")
+@* <script src="~/Scripts/googleMap.js"></script> *@
+@* <script src="~/Scripts/validationForm.js"></script> *@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB5gWj09Kgwjf9Jw1GU0rbeNh8IrkFyhQ&callback=initMap"
         type="text/javascript"></script>

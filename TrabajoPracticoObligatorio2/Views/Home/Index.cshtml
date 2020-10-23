@@ -53,13 +53,18 @@
 </main>
 
 @* <script src="~/Scripts/jquery-3.4.1.min.js"></script> *@
-<script src="~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.js"></script>
-<script src="~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.min.js"></script>
-
-@section scripts
-{
-    <script src="~/Scripts/popUpInformation.js"></script>
-}
-
-<script src="~/Scripts/sliderFunction.js"></script> 
-<script src="~/Scripts/accordionFunction.js"></script>
+@Scripts.Render("~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.js")
+@Scripts.Render("~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.min.js")
+@Scripts.Render("~/Scripts/popUpInformation.js")
+@Scripts.Render("~/Scripts/sliderFunction.js")
+@Scripts.Render("~/Scripts/accordionFunction.js")
+@* <script src="~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.js"></script> *@
+@* <script src="~/Scripts/PLUGINS/interactive-list-scroller-loop/jquery.scrolloop.min.js"></script> *@
+@* *@
+@* @section scripts *@
+@* { *@
+@*     <script src="~/Scripts/popUpInformation.js"></script> *@
+@* } *@
+@* *@
+@* <script src="~/Scripts/sliderFunction.js"></script>  *@
+@* <script src="~/Scripts/accordionFunction.js"></script> *@
