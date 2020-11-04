@@ -182,7 +182,6 @@
     <Content Include="Scripts\PLUGINS\interactive-list-scroller-loop\LICENSE" />
     <Content Include="Scripts\PLUGINS\interactive-list-scroller-loop\README.md" />
     <Content Include="Scripts\PLUGINS\interactive-list-scroller-loop\style.css" />
-    <Content Include="Scripts\validationForm.js" />
     <Content Include="Scripts\sliderFunction.js" />
     <Content Include="Scripts\popUpInformation.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -219,8 +218,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Styles\" />
-    <Folder Include="Views\Footer\" />
-    <Folder Include="Views\Index\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -9,12 +9,8 @@
         @Styles.Render("~/Content/style.css")
         
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" />
-        @* @RenderSection("Styles", false) *@
-        
-        @* @Styles.Render("~/Content/css") *@
-        @* @Scripts.Render("~/bundles/modernizr") *@
-        
-        
+
+
         @Scripts.Render("~/Scripts/jquery-3.4.1.min.js")
     </head>
     <body>
@@ -26,9 +22,6 @@
 
         @Html.Partial("Partial/FooterViewPartial")    
 
-        
-    @* @Scripts.Render("~/bundles/jquery") *@
-        @* @Scripts.Render("~/bundles/bootstrap") *@
         @RenderSection("scripts", required: false)
     </body>
 </html>
