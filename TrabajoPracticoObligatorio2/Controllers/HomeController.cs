@@ -12,18 +12,35 @@ namespace TrabajoPracticoObligatorio2.Controllers
     {
         public ActionResult Index()
         {
-            var resp = CapaNegocio.Products.GetItems();
-            var resp2 = Products.GetCategories();
+            var items = CNTPO2.GetItems();
+            var categories = CNTPO2.GetCategories();
+            var subCategories = CNTPO2.GetSubCategories();
+            
+            
 
-            var data = new IndexModelData();
+            var data = new IndexModelData
+            {
+                Items = items.Select(x => new ProductModel
+                {
+                    
+                }).ToList(),
+                Categories = categories.Select(y => new CategoriesModel
+                {
+                    
+                }).ToList(),
+                SubCategorieses = new SelectList(subCategories.Select(w => new SelectListItem
+                {
+                    
+                }))
+            }
 
-            data.categories = resp2.Select(x => new Categories
+            data.Categories = categories.Select(x => new CategoriesModel
             {
                 ID = x.ID,
                 Category = x.Category,
             }).ToList();
             
-            data.items = resp.Select(x => new ProductModel
+            data.Items = items.Select(x => new ProductModel
             {
                 ID = x.ID,
                 Description = x.Description,

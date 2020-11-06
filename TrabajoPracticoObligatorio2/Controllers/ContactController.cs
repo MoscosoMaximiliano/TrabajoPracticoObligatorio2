@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Web.Mvc;
 using System.Web.WebPages;
+using CapaNegocio;
 using TrabajoPracticoObligatorio2.Models;
 
 namespace TrabajoPracticoObligatorio2.Controllers
@@ -37,11 +38,11 @@ namespace TrabajoPracticoObligatorio2.Controllers
 
             return Json(new {res = ViewBag.Response, msg = ViewBag.Message}, JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
-        public ActionResult Contact(string name, string email, string phone, string message)
+        public void AddQuery(string name, string email, string number, string message)
         {
-            ViewBag.Message = "ASDFASF";
-            return View();
+            var response = CNTPO2.AddQuery(name, email, number, message);
         }
     }
 }
