@@ -21,10 +21,9 @@ namespace TrabajoPracticoObligatorio2.Controllers
             {
                 ID = x.ID,
                 Category = x.Category,
-                SubCategory = x.SubCategory
             }).ToList();
             
-            data.items = resp.Select(x => new Item
+            data.items = resp.Select(x => new ProductModel
             {
                 ID = x.ID,
                 Description = x.Description,

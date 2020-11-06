@@ -2,9 +2,9 @@
 
 namespace CapaNegocio
 {
-    public class CNItem
+    public class CNProduct
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
         public float Price { get; set; }
         public string Description { get; set; }
@@ -12,5 +12,7 @@ namespace CapaNegocio
         public string ImgUrl { get; set; }
         
         public bool IsOffer { get; set; }
+        
+        public bool IsFeatured { get; set; }
     }
 }

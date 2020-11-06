@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Auxiliaries" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ namespace TrabajoPracticoObligatorio2.Models
 {
     public class IndexModelData
     {
-        public List<Item> items;
+        public List<ProductModel> items;
         public List<Categories> categories;
     }
 }
