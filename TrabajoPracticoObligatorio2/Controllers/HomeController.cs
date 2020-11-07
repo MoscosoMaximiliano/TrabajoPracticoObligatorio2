@@ -15,24 +15,34 @@ namespace TrabajoPracticoObligatorio2.Controllers
             var items = CNTPO2.GetItems();
             var categories = CNTPO2.GetCategories();
             var subCategories = CNTPO2.GetSubCategories();
-            
-            
 
-            var data = new IndexModelData
+
+
+            var data = new IndexDataModel
             {
                 Items = items.Select(x => new ProductModel
                 {
+                    ID = x.ID,
+                    Name = x.Description,
+                    ImgUrl = x.ImgUrl,
+                    Price = x.Price,
+                    IsOffer = x.IsOffer,
+                    IsFeatured = x.IsFeatured
                     
                 }).ToList(),
                 Categories = categories.Select(y => new CategoriesModel
                 {
-                    
+                    ID = y.ID,
+                    Category = y.Category
                 }).ToList(),
-                SubCategorieses = new SelectList(subCategories.Select(w => new SelectListItem
+                SubCategorieses = subCategories.Select(w => new SubCategoriesModel
                 {
-                    
-                }))
-            }
+                   ID = w.ID,
+                   Name = w.Name,
+                   IdCategory = w.IdCategory
+                }).ToList()
+                
+            };
 
             data.Categories = categories.Select(x => new CategoriesModel
             {

@@ -2,11 +2,11 @@
 
 namespace TrabajoPracticoObligatorio2.Models
 {
-    public class SubCategories
+    public class SubCategoriesModel
     {
         public int ID { get; set; }
         
-        public SelectList IdCategory { get; set; }
+        public int IdCategory { get; set; }
         
         public string Name { get; set; }
     }

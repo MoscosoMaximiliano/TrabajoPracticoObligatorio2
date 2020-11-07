@@ -40,9 +40,25 @@ namespace TrabajoPracticoObligatorio2.Controllers
         }
 
         [HttpPost]
-        public void AddQuery(string name, string email, string number, string message)
+        public JsonResult AddQuery(string name, string email, string number, string message)
         {
             var response = CNTPO2.AddQuery(name, email, number, message);
+
+            ViewBag.Message = "";
+            ViewBag.Response = false;
+
+            if (response)
+            {
+                ViewBag.Response = true;
+                ViewBag.Message = "Se completo con exito el registro del formulario";
+            }
+            else
+            {
+                ViewBag.Response = false;
+                ViewBag.Message = "Hubo un error con el registro del formulario";
+            }
+            
+            return Json(new {res = ViewBag.Response, msg = ViewBag.Message}, JsonRequestBehavior.AllowGet);
         }
     }
 }

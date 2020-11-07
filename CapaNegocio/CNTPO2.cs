@@ -52,9 +52,9 @@ namespace CapaNegocio
         {
             try
             {
-                var capaDato = CapaDatos.Methods.EF.GetSubCategories();
+                var capaDatos = CapaDatos.Methods.EF.GetSubCategories();
 
-                return capaDato.Select(x => new CNSubCategories
+                return capaDatos.Select(x => new CNSubCategories
                 {
                     
                     ID = x.ID,
@@ -69,9 +69,25 @@ namespace CapaNegocio
             }
         }
 
-        public static void AddQuery(string name, string email, string phone, string message)
+        public static bool AddQuery(string name, string email, string phone, string message)
         {
-            CapaDatos.Methods.EF.SetQuery(name, email, phone, message);
+            try
+            {
+                var capaDatos = CapaDatos.Methods.EF.SetQuery(name, email, phone, message);
+
+                if (capaDatos)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
     }
 }

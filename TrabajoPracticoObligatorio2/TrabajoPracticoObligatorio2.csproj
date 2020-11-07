@@ -128,9 +128,9 @@
     </Compile>
     <Compile Include="Models\CategoriesModel.cs" />
     <Compile Include="Models\FormData.cs" />
-    <Compile Include="Models\IndexModelData.cs" />
+    <Compile Include="Models\IndexDataModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
-    <Compile Include="Models\SubCategories.cs" />
+    <Compile Include="Models\SubCategoriesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

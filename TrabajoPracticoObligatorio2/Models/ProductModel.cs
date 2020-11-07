@@ -10,5 +10,7 @@
         public string ImgUrl { get; set; }
         
         public bool IsOffer { get; set; }
+        
+        public bool IsFeatured { get; set; }
     }
 }

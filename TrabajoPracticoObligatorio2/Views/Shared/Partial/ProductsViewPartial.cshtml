@@ -1,7 +1,7 @@
-﻿<div class="general-title">Featured CNTPO2</div>
+﻿<div class="general-title">Featured Products</div>
 <div class="container-block" id="ProductFeatured">
     <!--Show the featured items-->
-    @foreach (var item in Model.items)
+    @foreach (var item in Model.Items)
     {
         if (!item.IsOffer)
         {
@@ -20,11 +20,14 @@
         }
 
     }
+    
+    
+    
 </div>
 <div class="general-title">Offers</div>
 <div class="container-block" id="ProductOffer">
     <!--Show the offer items-->
-    @foreach (var item in Model.items)
+    @foreach (var item in Model.Items)
     {
         if (item.IsOffer)
         {
@@ -36,7 +39,7 @@
                          data-description="@item.Description"></article>
                 <img src="~/Content/Images/products/@item.ImgUrl" alt="">
                 <h1>@item.Name</h1>
-                <h3>@item.Price</h3>
+                <h3>US$@item.Price</h3>
                 <a href="#popup" onclick="ShowInformation('@item.ID')" class="button">See</a>
                 <button class="buy-button">Buy</button>
             </div>

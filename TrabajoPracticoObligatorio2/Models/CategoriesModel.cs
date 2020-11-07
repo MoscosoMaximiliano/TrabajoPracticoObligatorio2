@@ -6,6 +6,6 @@ namespace TrabajoPracticoObligatorio2.Models
     {
         public int ID { get; set; }
         public string Category { get; set; }
-        
+
     }
 }

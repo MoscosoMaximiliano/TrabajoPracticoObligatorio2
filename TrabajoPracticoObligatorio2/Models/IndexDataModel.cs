@@ -2,10 +2,10 @@
 
 namespace TrabajoPracticoObligatorio2.Models
 {
-    public class IndexModelData
+    public class IndexDataModel
     {
         public List<ProductModel> Items;
         public List<CategoriesModel> Categories;
-        public List<SubCategories> SubCategorieses;
+        public List<SubCategoriesModel> SubCategorieses;
     }
 }
