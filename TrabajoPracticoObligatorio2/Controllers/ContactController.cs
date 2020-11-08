@@ -16,47 +16,12 @@ namespace TrabajoPracticoObligatorio2.Controllers
         }
 
         [HttpPost]
-        public JsonResult Form(FormData form)
+        public JsonResult AddQuery(string name, string email, string phone, string message)
         {
-
-            ViewBag.Message = "";
-            ViewBag.Response = false;
+            var response = CNTPO2.AddQuery(name, email, phone, message);
             
-            try
-            {
-                if (!form.Name.IsEmpty() && !form.Email.IsEmpty() && !form.Phone.IsEmpty() && !form.Message.IsEmpty())
-                {
-                    ViewBag.Response = true;
-                    ViewBag.Message = "Se completo con exito el registro del formulario";
-                }
-            }
-            catch (Exception e)
-            {
-                ViewBag.Response = false;
-                ViewBag.Message = "Hubo un error con el registro del formulario";
-            }
-
-            return Json(new {res = ViewBag.Response, msg = ViewBag.Message}, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpPost]
-        public JsonResult AddQuery(string name, string email, string number, string message)
-        {
-            var response = CNTPO2.AddQuery(name, email, number, message);
-
-            ViewBag.Message = "";
-            ViewBag.Response = false;
-
-            if (response)
-            {
-                ViewBag.Response = true;
-                ViewBag.Message = "Se completo con exito el registro del formulario";
-            }
-            else
-            {
-                ViewBag.Response = false;
-                ViewBag.Message = "Hubo un error con el registro del formulario";
-            }
+            ViewBag.Response = response;
+            ViewBag.Message = response ? "Se completo con exito el registro del formulario" : "Hubo un error con el registro del formulario";
             
             return Json(new {res = ViewBag.Response, msg = ViewBag.Message}, JsonRequestBehavior.AllowGet);
         }

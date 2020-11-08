@@ -69,11 +69,11 @@ namespace CapaNegocio
             }
         }
 
-        public static bool AddQuery(string name, string email, string phone, string message)
+        public static bool AddQuery(string name, string mail, string phone, string message)
         {
             try
             {
-                var capaDatos = CapaDatos.Methods.EF.SetQuery(name, email, phone, message);
+                var capaDatos = CapaDatos.Methods.EF.SetQuery(name, mail, phone, message);
 
                 if (capaDatos)
                 {

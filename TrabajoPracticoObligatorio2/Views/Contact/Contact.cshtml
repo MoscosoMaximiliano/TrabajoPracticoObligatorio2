@@ -25,7 +25,7 @@
                         <label for="message">Message*:</label>
                         <textarea name="message" id="message" cols="30" rows="10" placeholder="Some text"></textarea>
                         <div style="text-align: center;">
-                            <input type="button" value="Submit" id="buttonForm" onclick="ValidateData()">
+                            <input type="button" value="Submit" id="buttonForm" onclick="AJAXData()">
                         </div>
                     </form>
                     <h3>All fields are requiered!</h3>
@@ -52,84 +52,12 @@
     function isNumberKey(evt) {
         const charCode = (evt.which) ? evt.which : evt.keyCode;
         return !(charCode > 31 && (charCode < 48 || charCode > 57));
-    }
-    
-    function ValidateData()
-    {
-        const name = document.getElementById('name');
-        const email = document.getElementById('email');
-        const phone = document.getElementById('phone');
-        const message = document.getElementById('message');
-    
-        const button = document.getElementById('buttonForm');
-    
-        const errorMessages = document.getElementById('errorMessages');
-    
-        const ck_alphanumerics = /^[A-Za-z0-9-]/;
-        
-        
-        let messages = [];
-        
-    
-        if (name.value === '' || name.value == null)
-            messages.push("Name field its empty");
-    
-        else if (name.value.length < 4 && ck_alphanumerics.test(name.value.length)) {
-            messages.push("The name can only contain alphanumeric characters");
-            messages.push("The name its too short");
-        }
-    
-    
-        else if (name.value.length > 30 && ck_alphanumerics.test(name.value.length)) {
-            messages.push("The name its too long");
-            messages.push("The name can only contain alphanumeric characters");
-        }
-    
-        if (email.value === '' || email.value == null)
-            messages.push("Email field its empty");
-    
-        if (phone.value === '' || phone.value == null)
-            messages.push("Business field its empty");
-    
-        else if (phone.value.length > 20) {
-            messages.push("Business message cannot be more than 20 characters")
-        }
-    
-        if (message.value === '' || message.value == null)
-            messages.push("Message field its empty");
-    
-        else if (message.value.length < 10) {
-            messages.push("Message its too short")
-        }
-    
-        else if (message.value.length > 100) {
-            messages.push("Message its too long")
-        }
-    
-        var formatTextError = "<ul>"
-    
-        if (messages.length > 0) {
-            for (let index = 0; index < messages.length; index++) {
-                const element = messages[index];
-    
-                formatTextError += "<li>" + element + "</li>";
-    
-            }
-    
-            formatTextError += "</ul>";
-    
-            errorMessages.innerHTML = formatTextError;
-            return;
-        }
-        console.log("FGFKF");
-        AJAXData();
-    }
-        
+    }    
     
     function AJAXData()
     {
-        var url = "@Url.Action("Form","Contact")";
-        var contactData = { 
+        let url = "@Url.Action("AddQuery","Contact")";
+        let contactData = { 
            Name: $("#name").val(),
            Email: $("#email").val(),
            Phone: $("#phone").val(),
@@ -142,8 +70,7 @@
             data: contactData,  
             success: function(data) {  
                 console.log(data);
-                if(data.res)
-                    alert(data.msg);
+                alert(data.msg);
             },  
             error: function() {  
                 alert("Error occured!!")  
