@@ -20,22 +20,22 @@ namespace TrabajoPracticoObligatorio2.Controllers
 
             var data = new IndexDataModel
             {
-                Items = items.Select(x => new ProductModel
+                Items = items.Select(x => new CNProduct
                 {
                     ID = x.ID,
-                    Name = x.Description,
+                    Name = x.Name,
                     ImgUrl = x.ImgUrl,
                     Price = x.Price,
                     IsOffer = x.IsOffer,
                     IsFeatured = x.IsFeatured
                     
                 }).ToList(),
-                Categories = categories.Select(y => new CategoriesModel
+                Categories = categories.Select(y => new CNCategories
                 {
                     ID = y.ID,
                     Category = y.Category
                 }).ToList(),
-                SubCategorieses = subCategories.Select(w => new SubCategoriesModel
+                SubCategorieses = subCategories.Select(w => new CNSubCategories
                 {
                    ID = w.ID,
                    Name = w.Name,
@@ -44,22 +44,6 @@ namespace TrabajoPracticoObligatorio2.Controllers
                 
             };
 
-            data.Categories = categories.Select(x => new CategoriesModel
-            {
-                ID = x.ID,
-                Category = x.Category,
-            }).ToList();
-            
-            data.Items = items.Select(x => new ProductModel
-            {
-                ID = x.ID,
-                Description = x.Description,
-                Name = x.Name,
-                Price = x.Price,
-                ImgUrl = x.ImgUrl,
-                IsOffer = x.IsOffer
-            }).ToList();
-            
             return View(data);
         }
     }

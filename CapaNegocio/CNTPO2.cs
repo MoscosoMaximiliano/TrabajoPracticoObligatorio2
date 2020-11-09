@@ -75,14 +75,7 @@ namespace CapaNegocio
             {
                 var capaDatos = CapaDatos.Methods.EF.SetQuery(name, mail, phone, message);
 
-                if (capaDatos)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return capaDatos;
             }
             catch (Exception e)
             {
