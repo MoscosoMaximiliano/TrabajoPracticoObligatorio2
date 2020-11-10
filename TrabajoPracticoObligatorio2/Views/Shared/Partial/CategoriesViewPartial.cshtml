@@ -4,13 +4,13 @@
     {
         <button class="accordion">@category.Category</button>
         <div class="panel">
-        @foreach (var sub in Model.SubCategorieses)
-        {
-            if (sub.IdCategory == category.ID)
+            @foreach (var sub in Model.SubCategorieses)
             {
-                <p>@sub.Name</p> 
+                if (sub.IdCategory == category.ID)
+                {
+                    <p>@sub.Name</p> 
+                }
             }
-        }
         </div>
 
     }
