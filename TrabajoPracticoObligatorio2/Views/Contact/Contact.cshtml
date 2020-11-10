@@ -71,6 +71,9 @@
             success: function(data) {  
                 console.log(data);
                 alert(data.msg);
+                
+                if (data.err !== "")
+                    $("#errorMessages").html(data.err);
             },  
             error: function() {  
                 alert("Error occured!!")  
