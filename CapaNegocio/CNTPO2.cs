@@ -99,8 +99,8 @@ namespace CapaNegocio
 
         public static string ErrorsValidation(string name, string mail, string phone, string message)
         {
-            List<string> errs = new List<string>();
-            string finalResult = "";
+            var errs = new List<string>();
+            var finalResult = "";
 
             if(string.IsNullOrEmpty(name))
                 errs.Add("Name field its empty");
@@ -142,8 +142,8 @@ namespace CapaNegocio
                 errs.Add("Message its too long");
             }
             
-            for (int index = 0; index < errs.Count; index++) {
-                string element = errs[index];
+            for (var index = 0; index < errs.Count; index++) {
+                var element = errs[index];
 
                 finalResult += "<li>" + element + "</li>";
             
